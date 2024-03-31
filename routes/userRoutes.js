@@ -39,8 +39,6 @@ router.post("/add", jsonParser, async (req, res) => {
             await user.save()
             res.send({ status: true, message: "User saved successfully" })
         }
-
-
     } catch (error) {
         console.log(error)
         res.send({ status: false, message: error.details[0].message })
@@ -90,7 +88,4 @@ router.post('/login', jsonParser, async (req, res) => {
         res.send({ status: false, message: error.details[0].message })
     }
 })
-
-
-
 module.exports = router
